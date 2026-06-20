@@ -1,65 +1,216 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
- <meta http-equiv="refresh" content="2"></meta>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="2">
 <style>
-	#tabla{border-collapse:collapse;
-		}
-	#q1,#q2,#q3,#q4{	/*Varios id con mismas características*/
-		width:100px;
-		height:100px;
-		border:1px solid black;
-		text-align:center;
-		}
-	#q1{background-color:	/*Cuadrante 1*/
-		{% if ejeX > 0 and ejeY > 0 %}
-			lightblue;
-		{% else %}
-			gray;
-		{% endif %}
-		}
-	#q2{background-color:	/*Cuadrante 2*/
-		{% if ejeX > 0 and ejeY < 0 %}
-			lightblue;
-		{% else %}
-			gray;
-		{% endif %}
-		}
-	#q3{background-color:	/*Cuadrante 3*/
-		{% if ejeX < 0 and ejeY > 0 %}
-			lightblue;
-		{% else %}
-			gray;
-		{% endif %}
-		}
-	#q4{background-color:	/*Cuadrante 4*/
-		{% if ejeX < 0 and ejeY < 0 %}
-			lightblue;
-		{% else %}
-			gray;
-		{% endif %}
-		}
+body{
+background:#F8EEDB;
+font-family:Arial,sans-serif;
+text-align:center;
+margin:0;
+color:#5C4033;
+}
+#titulo{
+margin:25px auto 10px;
+width:700px;
+background:#B88746;
+color:white;
+padding:18px;
+border-radius:18px;
+font-size:40px;
+box-shadow:0 6px 14px rgba(0,0,0,.2);
+}
+#subtitulo{font-size:22px;margin-bottom:5px;}
+#descripcion{
+width:760px;
+margin:auto;
+background:#FFF8EE;
+padding:12px;
+border-radius:15px;
+box-shadow:0 4px 10px rgba(0,0,0,.12);
+}
+#datos{
+display:inline-block;
+margin:20px;
+background:#8B6B4A;
+color:white;
+padding:12px 25px;
+border-radius:15px;
+font-size:24px;
+}
+#tabla{
+margin:auto;
+border-collapse:separate;
+border-spacing:28px;
+}
+td{
+width:250px;
+height:330px;
+background:#FFF8EE;
+border:4px solid #B88746;
+border-radius:25px;
+box-shadow:0 6px 15px rgba(0,0,0,.18);
+vertical-align:top;
+padding:10px;
+}
+td img{
+width:200px;
+display:block;
+margin:8px auto;
+}
+#nombre{font-size:28px;font-weight:bold;margin-top:5px;}
+#estado{
+margin-top:8px;
+padding:8px;
+background:#F3E1C8;
+border-radius:10px;
+font-size:20px;
+}
+#decoracion{
+font-size:28px;
+margin:20px;
+}
+#shadowca{
+    width:850px;
+    margin:60px auto;
+    background:#FFF8EE;
+    border:4px solid #B88746;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+#shadowca h2{
+    color:#8B6B4A;
+    margin-bottom:10px;
+}
+
+#shadowcaTitulo{
+    font-size:48px;
+    color:#222;
+    letter-spacing:6px;
+    margin:15px 0;
+}
+
+#shadowca p{
+    font-size:22px;
+    color:#5C4033;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+#botonShadowca{
+    display:inline-block;
+    background:#222;
+    color:white;
+    text-decoration:none;
+    padding:18px 40px;
+    font-size:24px;
+    font-weight:bold;
+    border-radius:18px;
+    transition:.3s;
+}
+
+#botonShadowca:hover{
+    background:#B88746;
+    transform:scale(1.08);
+}
+
 </style>
-
 </head>
+
 <body>
+	
 
-<h1>Posición XY</h1>
+<div id="titulo">🐶 Guardería Salchicha 🐶</div>
 
-<p>X = {{ ejeX }}</p>
-<p>Y = {{ ejeY }}</p>
+<div id="subtitulo">Cristian Muena</div>
+
+<div id="descripcion">
+Los ejes X e Y indican en qué zona del jardín se encuentra el visitante.
+El perrito de esa zona despierta para recibirlo mientras los demás siguen durmiendo.
+</div>
+
+<div id="datos">
+📍 X = {{ ejeX }} &nbsp;&nbsp;|&nbsp;&nbsp; Y = {{ ejeY }}
+</div>
+
+<div id="decoracion">🐾 🌼 🦴 🌿 🐾 🌸 🦴 🐾</div>
 
 <table id="tabla">
-<tr id="cuadros">
-    <td id="q1">Q1</td>
-    <td id="q2">Q2</td>
-</tr>
 <tr>
-    <td id="q3">Q3</td>
-    <td id="q4">Q4</td>
+
+
+<td>
+<div id="nombre">☕ Café</div>
+{% if ejeX > 0 and ejeY > 0 %}
+<img src="{{ url_for('static', filename='imagenes/cafe.png') }}">
+<div id="estado">🟢 Despierto</div>
+{% else %}
+<img src="{{ url_for('static', filename='imagenes/cafed.png') }}">
+<div id="estado">😴 Durmiendo</div>
+{% endif %}
+</td>
+
+<td>
+<div id="nombre">🎨 Arle</div>
+{% if ejeX > 0 and ejeY < 0 %}
+<img src="{{ url_for('static', filename='imagenes/arle.png') }}">
+<div id="estado">🟢 Despierto</div>
+{% else %}
+<img src="{{ url_for('static', filename='imagenes/arled.png') }}">
+<div id="estado">😴 Durmiendo</div>
+{% endif %}
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<div id="nombre">🖤 Negro</div>
+{% if ejeX < 0 and ejeY > 0 %}
+<img src="{{ url_for('static', filename='imagenes/negro.png') }}">
+<div id="estado">🟢 Despierto</div>
+{% else %}
+<img src="{{ url_for('static', filename='imagenes/negrod.png') }}">
+<div id="estado">😴 Durmiendo</div>
+{% endif %}
+</td>
+
+<td>
+<div id="nombre">🌭 Largo</div>
+{% if ejeX < 0 and ejeY < 0 %}
+<img src="{{ url_for('static', filename='imagenes/largo.png') }}">
+<div id="estado">🟢 Despierto</div>
+{% else %}
+<img src="{{ url_for('static', filename='imagenes/largod.png') }}">
+<div id="estado">😴 Durmiendo</div>
+{% endif %}
+</td>
+
 </tr>
 </table>
+
+<div id="decoracion">🌿 🐾 🦴 🌼 🐾 🌸 🦴 🌿</div>
+<div id="shadowca">
+
+    <h2>🌟 Descubre otro proyecto desarrollado en Flask</h2>
+
+    <h1 id="shadowcaTitulo">🌑 SHADOWCA</h1>
+
+    <p>
+        Tienda online de poleras oversize inspiradas en anime.<br>
+        Descubre diseños exclusivos de Jujutsu Kaisen, One Piece,
+        Dragon Ball y muchas series más.
+    </p>
+
+    <a id="botonShadowca" href="{{ url_for('jujutsu') }}">
+        🛍️ Entrar a Shadowca
+    </a>
+
+</div>
 
 </body>
 </html>

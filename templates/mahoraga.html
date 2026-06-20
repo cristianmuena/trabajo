@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Shadowca | Mahoraga</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f5f5;
+}
+
+/* Barra superior */
+
+header{
+    background:#1f1f1f;
+    padding:18px;
+    text-align:center;
+}
+
+header a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+header a:hover{
+    color:#d9b36c;
+}
+
+/* Caja principal */
+
+#producto{
+    width:1000px;
+    margin:40px auto;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    padding:40px;
+    display:flex;
+    gap:40px;
+}
+
+/* Imagen */
+
+#imagen{
+    width:45%;
+}
+
+#imagen img{
+    width:100%;
+    border-radius:15px;
+}
+
+/* Información */
+
+#info{
+    width:55%;
+    text-align:left;
+}
+
+#marca{
+    color:#888;
+    font-size:18px;
+}
+
+h1{
+    font-size:42px;
+    margin:10px 0;
+}
+
+#precio{
+    color:#1b8f3c;
+    font-size:38px;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+#stock{
+    color:#0b8d2a;
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+ul{
+    font-size:20px;
+    line-height:2;
+}
+
+#tallas{
+    margin:30px 0;
+}
+
+.talla{
+    display:inline-block;
+    border:2px solid #444;
+    border-radius:10px;
+    padding:12px 18px;
+    margin-right:10px;
+    font-weight:bold;
+}
+
+#comprar{
+    display:inline-block;
+    margin-top:30px;
+    background:#111;
+    color:white;
+    text-decoration:none;
+    padding:18px 35px;
+    border-radius:15px;
+    font-size:22px;
+    transition:.3s;
+}
+
+#comprar:hover{
+    background:#b88746;
+}
+
+#descripcion{
+    width:1000px;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+#descripcion h2{
+    margin-top:0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<a href="{{ url_for('index') }}">🏠 Guardería Salchicha</a>
+
+<a href="{{ url_for('jujutsu') }}">🛍 Volver a Shadowca</a>
+
+</header>
+
+<div id="producto">
+
+<div id="imagen">
+
+<img src="{{ url_for('static', filename='imagenes/maho.png') }}">
+
+</div>
+
+<div id="info">
+
+<div id="marca">SHADOWCA</div>
+
+<h1>Polera Mahoraga</h1>
+
+<div id="precio">$19.990</div>
+
+<div id="stock">✔ Stock disponible</div>
+
+<ul>
+
+<li>👕 Oversize Premium</li>
+
+<li>🧵 Algodón 100%</li>
+
+<li>🎨 Estampado DTF HD</li>
+
+<li>🇨🇱 Diseño exclusivo Shadowca</li>
+
+<li>🚚 Envíos a todo Chile</li>
+
+</ul>
+
+<div id="tallas">
+
+<span class="talla">S</span>
+
+<span class="talla">M</span>
+
+<span class="talla">L</span>
+
+<span class="talla">XL</span>
+
+</div>
+
+<a id="comprar" href="#">
+🛒 Agregar al carrito
+</a>
+
+</div>
+
+</div>
+
+<div id="descripcion">
+
+<h2>Descripción</h2>
+
+<p>
+Inspirada en Mahoraga, uno de los shikigamis más poderosos de Jujutsu Kaisen.
+Esta polera fue diseñada para quienes buscan una prenda de excelente calidad,
+con un estampado duradero y un estilo oversize moderno.
+</p>
+
+</div>
+
+</body>
+</html>
