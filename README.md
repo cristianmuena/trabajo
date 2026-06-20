@@ -44,7 +44,7 @@ La página principal muestra los valores X e Y recibidos desde el sensor y los c
 
 Cuando no existe una detección, todos los perros permanecen durmiendo.
 
-![Todos durmiendo](imagenesREADME/todoperros.png)
+![Todos durmiendo](imagenesREADME/todosperros.png)
 
 ---
 
